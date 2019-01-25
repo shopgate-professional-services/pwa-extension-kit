@@ -1,14 +1,8 @@
-import env, { helpers} from './index';
+import env from './env';
 
-describe('env/helpers', () => {
-  it('should export all functions as default', () => {
-    const requiredNames = ['helpers'];
-    requiredNames.forEach(name => {
-      expect(typeof env[name]).toBe('function');
-    });
-  });
+export { env };
 
-  it('should export isIOSTheme as named export', () => {
-    expect(typeof isIOSTheme).toBe('function');
-  });
-});
+export default {
+  env,
+};
+
