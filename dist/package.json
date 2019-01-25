@@ -1,6 +1,6 @@
 {
   "name": "@shopgate/pwa-extension-kit",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "Helpers and other libraries commonly used for extension development",
   "scripts": {
     "test": "jest",
