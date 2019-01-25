@@ -1,11 +1,10 @@
 {
   "name": "@shopgate/pwa-extension-kit",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Helpers and other libraries commonly used for extension development",
   "scripts": {
     "test": "jest",
-    "build": "node ./scripts/build.js",
-    "publish": "npm publish dist"
+    "build": "node ./scripts/build.js"
   },
   "repository": {
     "type": "git",
