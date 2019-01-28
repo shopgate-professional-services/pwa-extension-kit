@@ -10,7 +10,7 @@ It contains functions, React components and wrappers which are meant to help dev
 This package follows semver. 
 
 ## Index of contents (alphabetically ordered)
-- .env - Environment related helpers [read documentation](https://github.com/shopgate/pwa-extension-kit/src/env/README.md)
+- .env - Environment related helpers [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/env/README.md)
 
 
 
@@ -24,6 +24,6 @@ apps and mobile websites for the iPhone, iPad, Android smartphones and tablets.
 
 ## License
 
-Shopgate Cloud - Extension Boilerplate is available under the Apache License, Version 2.0.
+Shopgate Connect - PWA Extension Kit is available under the Apache License, Version 2.0.
 
 See the [LICENSE](./LICENSE) file for more information.

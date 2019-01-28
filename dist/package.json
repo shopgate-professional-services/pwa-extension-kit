@@ -1,9 +1,10 @@
 {
   "name": "@shopgate/pwa-extension-kit",
-  "version": "0.1.0",
+  "version": "0.2.0-alpha.1",
   "description": "Helpers and other libraries commonly used for extension development",
   "scripts": {
     "test": "jest",
+    "coverage": "jest --coverage --collectCoverageFrom=src/**",
     "build": "node ./scripts/build.js"
   },
   "repository": {
@@ -40,5 +41,8 @@
     "jest": "^23.6.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0"
+  },
+  "dependencies": {
+    "@shopgate/pwa-common": "^6.0.1"
   }
 }
