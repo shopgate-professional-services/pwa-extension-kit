@@ -10,7 +10,7 @@ It contains functions, React components and wrappers which are meant to help dev
 This package follows semver. 
 
 ## Index of contents (alphabetically ordered)
-- .env - Environment related helpers [read documentation](https://github.com/shopgate/pwa-extension-kit/src/env/README.md)
+- .env - Environment related helpers [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/env/README.md)
 
 
 
