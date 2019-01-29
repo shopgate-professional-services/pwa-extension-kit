@@ -13,7 +13,7 @@ var _context = require("@shopgate/pwa-common/context");
 
 var _data = require("@shopgate/pwa-common/helpers/data");
 
-var _helpers = require("../../helpers");
+var _helpers = require("../helpers");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

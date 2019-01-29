@@ -15,6 +15,7 @@ This package follows semver.
 - `/helpers` - Common helper functions [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/helpers/README.md)
 -- `/helpers/TaggedLogger` - helper class for printing tagged logs [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/helpers/README.md#TaggedLogger)
 - `/connectors` - [Higher Order Components](https://reactjs.org/docs/higher-order-components.html) used as a data/actions interface
+-- `/connectors/withHistoryActions` - Provides routing actions: `historyPop`, `historyPush` and `historyReplace`. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withHistoryActions)
 -- `/connectors/withPageProductId` - Provides decoded `productId` read from a pathname of a product page. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withPageProductId)
 
 

@@ -28,10 +28,11 @@ jest.mock('@shopgate/pwa-common/context', () => ({
   },
 }));
 
-describe('data/connectors/withPageProductId', () => {
+describe('connectors/withPageProductId', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-  })
+  });
+
   // eslint-disable-next-line react/prop-types, require-jsdoc
   const MockedComponent = props => <div>{props.productId}</div>;
 

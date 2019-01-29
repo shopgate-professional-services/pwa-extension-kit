@@ -14,9 +14,9 @@ This package follows semver.
 -- `env/helpers/isIOSTheme` - detects if currently used theme is an ios theme [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/env/README.md#isIOSTheme)
 - `/helpers` - Common helper functions [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/helpers/README.md)
 -- `/helpers/TaggedLogger` - helper class for printing tagged logs [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/helpers/README.md#TaggedLogger)
-- `/data` - Data related wrappers and helpers
--- `/data/connectors` - [Higher Order Components](https://reactjs.org/docs/higher-order-components.html) used as a data interface
--- `/data/connectors/withPageProductId` - Provides decoded `productId` read from a pathname of a product page. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/data/connectors/README.md#withPageProductId)
+- `/connectors` - [Higher Order Components](https://reactjs.org/docs/higher-order-components.html) used as a data/actions interface
+-- `/connectors/withHistoryActions` - Provides routing actions: `historyPop`, `historyPush` and `historyReplace`. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withHistoryActions)
+-- `/connectors/withPageProductId` - Provides decoded `productId` read from a pathname of a product page. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withPageProductId)
 
 
 ## About Shopgate

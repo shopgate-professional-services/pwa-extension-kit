@@ -1,6 +1,6 @@
 {
   "name": "@shopgate/pwa-extension-kit",
-  "version": "0.2.0-alpha.2",
+  "version": "0.2.0-alpha.3",
   "description": "Helpers and other libraries commonly used for extension development",
   "scripts": {
     "test": "jest",
@@ -43,6 +43,7 @@
     "react-dom": "^16.3.0"
   },
   "dependencies": {
-    "@shopgate/pwa-common": "^6.0.1"
+    "@shopgate/pwa-common": "^6.0.1",
+    "glamor": "^2.20.40"
   }
 }
