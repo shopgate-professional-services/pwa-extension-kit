@@ -1,12 +1,16 @@
 import env from './env';
-import data from './data';
+import connectors from './connectors';
+import helpers from './helpers';
 
 export { env };
 
-export { data };
+export { connectors };
+
+export { helpers };
 
 export default {
   env,
-  data,
+  connectors,
+  helpers,
 };
 

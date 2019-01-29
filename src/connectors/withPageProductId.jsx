@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { RouteContext } from '@shopgate/pwa-common/context';
-import { hex2bin, bin2hex } from '@shopgate/pwa-common/helpers/data';
-import { TaggedLogger } from '../../helpers';
+import { hex2bin } from '@shopgate/pwa-common/helpers/data';
+import { TaggedLogger } from '../helpers';
 
 const logger = new TaggedLogger('withPageProductId');
 

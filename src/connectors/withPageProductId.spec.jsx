@@ -5,7 +5,7 @@ import withPageProductId from './withPageProductId';
 let mockedProductId;
 
 const mockedLogger = jest.fn();
-jest.mock('../../helpers/TaggedLogger', () => class MockedTaggedLogger {
+jest.mock('../helpers/TaggedLogger', () => class MockedTaggedLogger {
   // eslint-disable-next-line max-len
   // eslint-disable-next-line class-methods-use-this, require-jsdoc, extra-rules/potential-point-free
   warn(...args) {

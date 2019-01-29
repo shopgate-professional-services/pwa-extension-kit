@@ -1,9 +1,9 @@
-# Shopgate Connect - PWA Extension Kit - .data/connectors - Data connectors
+# Shopgate Connect - PWA Extension Kit - /connectors - Data connectors
 ## Purpose
 
-Connectors are [Higher Order Components](https://reactjs.org/docs/higher-order-components.html) which are made to simplify reading data from PWA app by frontend components.
+Connectors are [Higher Order Components](https://reactjs.org/docs/higher-order-components.html) which are made to simplify reading data or actions from PWA app by frontend components.
 
-Connectors are meant to replace some PWA redux selectors or Contexts by using them in a simpler way and hiding the logic behind gathering basic data which is proven to be commonly used by many extensions.   
+Connectors are meant to replace some PWA redux selectors/actions or Contexts by using them in a simpler way and hiding the logic behind gathering basic data which is proven to be commonly used by many extensions.  
 
 ## Available connectors
 ### withPageProductId
