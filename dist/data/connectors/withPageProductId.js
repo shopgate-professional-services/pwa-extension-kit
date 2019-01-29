@@ -7,9 +7,15 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 var _context = require("@shopgate/pwa-common/context");
 
 var _data = require("@shopgate/pwa-common/helpers/data");
+
+var _helpers = require("../../helpers");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -37,6 +43,32 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+var logger = new _helpers.TaggedLogger('withPageProductId');
+/**
+ * Reads productId from params and tries to hex2bin decode it.
+ * @param {Object} params Params.
+ * @returns {string|null|false}
+ */
+
+function decodeProductIdFromParams(params) {
+  var decodedProductId = null;
+
+  if (typeof params.productId === 'undefined') {
+    var message = 'Connector is probably rendered outside of page containing "productId" pattern param. Please check documentation for more information: https://github.com/shopgate/pwa-extension-kit/blob/master/src/data/connectors/README.md#withPageProductId';
+    logger.error(message);
+    return decodedProductId;
+  }
+
+  decodedProductId = (0, _data.hex2bin)(params.productId);
+
+  if (params.productId && !decodedProductId) {
+    logger.warn('Wrapping with empty productId. Possibly productId used in a pathname is not bin2hex encoded.');
+  }
+
+  return decodedProductId;
+} // eslint-disable-next-line react/prefer-stateless-function, require-jsdoc
+
+
 var WithPageProductId =
 /*#__PURE__*/
 function (_Component) {
@@ -50,6 +82,10 @@ function (_Component) {
 
   _createClass(WithPageProductId, [{
     key: "render",
+
+    /**
+     * @inheritDoc
+     */
     value: function render() {
       var _this$props = this.props,
           WrappedComponent = _this$props.WrappedComponent,
@@ -58,7 +94,7 @@ function (_Component) {
       return _react.default.createElement(_context.RouteContext.Consumer, null, function (_ref) {
         var params = _ref.params;
         return _react.default.createElement(WrappedComponent, _extends({
-          productId: (0, _data.hex2bin)(params.productId)
+          productId: decodeProductIdFromParams(params)
         }, otherProps));
       });
     }
@@ -68,7 +104,7 @@ function (_Component) {
 }(_react.Component);
 /**
  * Returns a Wrapped Component with automatic props.productId read from RouteContext.
- * @param {function} WrappedComponent
+ * @param {function} WrappedComponent Component which will be wrapped with data connector.
  * @returns {function} React component.
  */
 

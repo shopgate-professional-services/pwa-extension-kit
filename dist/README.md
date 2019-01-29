@@ -10,8 +10,13 @@ It contains functions, React components and wrappers which are meant to help dev
 This package follows semver. 
 
 ## Index of contents (alphabetically ordered)
-- .env - Environment related helpers [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/env/README.md)
-
+- `env` - Environment related helpers [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/env/README.md)
+-- `env/helpers/isIOSTheme` - detects if currently used theme is an ios theme [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/env/README.md#isIOSTheme)
+- `/helpers` - Common helper functions [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/helpers/README.md)
+-- `/helpers/TaggedLogger` - helper class for printing tagged logs [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/helpers/README.md#TaggedLogger)
+- `/data` - Data related wrappers and helpers
+-- `/data/connectors` - [Higher Order Components](https://reactjs.org/docs/higher-order-components.html) used as a data interface
+-- `/data/connectors/withPageProductId` - Provides decoded `productId` read from a pathname of a product page. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/data/connectors/README.md#withPageProductId)
 
 
 ## About Shopgate
