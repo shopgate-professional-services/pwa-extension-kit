@@ -17,6 +17,7 @@ This package follows semver.
 - `/connectors` - [Higher Order Components](https://reactjs.org/docs/higher-order-components.html) used as a data/actions interface
 -- `/connectors/withHistoryActions` - Provides routing actions: `historyPop`, `historyPush` and `historyReplace`. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withHistoryActions)
 -- `/connectors/withPageProductId` - Provides decoded `productId` read from a pathname of a product page. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withPageProductId)
+-- `/connectors/withPageState` - Provides `isVisible` and `isLoading` booleans. Values are taken from a page state. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withPageState)
 
 
 ## About Shopgate
