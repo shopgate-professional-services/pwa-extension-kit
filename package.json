@@ -1,6 +1,6 @@
 {
   "name": "@shopgate/pwa-extension-kit",
-  "version": "0.2.0-alpha.3",
+  "version": "0.2.0-alpha.4",
   "description": "Helpers and other libraries commonly used for extension development",
   "scripts": {
     "test": "jest",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/shopgate/pwa-extension-kit#readme",
   "devDependencies": {
     "@shopgate/eslint-config": "^6.0.1",
+    "@shopgate/pwa-core": "^6.0.1",
     "@shopgate/pwa-unit-test": "^6.0.1",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",

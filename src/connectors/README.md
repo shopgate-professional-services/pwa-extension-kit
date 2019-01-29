@@ -87,3 +87,29 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);
 // ConnectedComponent wrapped with data connector.
 export default withPageProductId(ConnectedComponent);
 ```
+
+### withPageState
+Connects provided component with a page state: `isLoading`, `isVisible`.
+
+#### Props provided
+- `isLoading (bool)` - Tells if page on which component is rendered is currently loading (usually with a visible progress bar).
+- `isVisilble (bool)` - Tells if page on which component is rendered is currently visible. Returns false when page is somewhere in the background. For example if another page is pushed to the history stack, but the one where component is rendered is still mounted via the DOM caching.
+
+#### Example usage
+```jsx
+import React from 'react';
+import { withPageState } from '@shopgate/pwa-extension-kit/connectors';
+import LoadingIndicator from '...';
+
+const MyComponent = ({isVisible, isLoading}) => {
+  if (!isVisible) {
+    return null;
+  }
+  
+  if (isLoading) {
+    return <LoadingIndicator />
+  }
+  
+  return <div>Hello world!</div>;
+}
+```

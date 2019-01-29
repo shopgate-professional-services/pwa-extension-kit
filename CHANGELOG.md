@@ -6,8 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 ### Added
-- [Connectors as Higher Order Components]
-- [Tagged Logger] helper
+- [Connectors as Higher Order Components] - `withPageState`, `withPageProductId`, `withHistoryActions`.
+- [Tagged Logger] helper.
 ### Changed
 ### Fixed
 ### Removed
