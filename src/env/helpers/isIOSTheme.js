@@ -6,4 +6,5 @@
 function isIOSTheme() {
   return process.env.THEME.includes('ios');
 }
+
 export default isIOSTheme;

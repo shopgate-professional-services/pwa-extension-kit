@@ -4,20 +4,18 @@ import withHistoryActions from './withHistoryActions';
 
 const mockedAction = jest.fn();
 jest.mock('react-redux', () => ({
-  connect: () => Component => props => {
-    return (
-      <Component
-        historyPush={(...args) => mockedAction('historyPush', ...args)}
-        historyPop={(...args) => mockedAction('historyPop', ...args)}
-        historyReplace={(...args) => mockedAction('historyReplace', ...args)}
-        {...props}
-      />
-    );
-  },
+  connect: () => Component => props => (
+    <Component
+      historyPush={(...args) => mockedAction('historyPush', ...args)}
+      historyPop={(...args) => mockedAction('historyPop', ...args)}
+      historyReplace={(...args) => mockedAction('historyReplace', ...args)}
+      {...props}
+    />
+  ),
 }));
 
 describe('connectors/withHistoryActions', () => {
-  const TestedComponent = (props) => <div>Other prop: {props.foo}</div>;
+  const TestedComponent = props => <div>Other prop: {props.foo}</div>;
   const ConnectedComponent = withHistoryActions(TestedComponent);
   let component;
   let props;
@@ -39,7 +37,7 @@ describe('connectors/withHistoryActions', () => {
   });
   describe('Actions', () => {
     const actions = ['historyPush', 'historyPop', 'historyReplace'];
-    actions.forEach(action => {
+    actions.forEach((action) => {
       it(`should call ${action}`, () => {
         const pathname = 'PATHNAME';
 

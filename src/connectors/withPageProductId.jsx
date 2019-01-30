@@ -43,7 +43,8 @@ class WithPageProductId extends Component {
     return (
       <RouteContext.Consumer>
         { ({ params }) =>
-          <WrappedComponent productId={decodeProductIdFromParams(params)} {...otherProps} /> }
+          <WrappedComponent productId={decodeProductIdFromParams(params)} {...otherProps} />
+        }
       </RouteContext.Consumer>
     );
   }
