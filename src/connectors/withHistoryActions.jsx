@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { historyPush, historyReplace, historyPop } from '@shopgate/pwa-common/actions/router';
 
+// eslint-ignore-next-line require-jsdoc
 class WithHistoryActions extends Component {
   static propTypes = {
     historyPop: PropTypes.func.isRequired,
@@ -28,6 +29,9 @@ class WithHistoryActions extends Component {
     this.props.historyPop();
   };
 
+  /**
+   * @inheritDoc
+   */
   render() {
     const { WrappedComponent, otherProps } = this.props;
     return (
@@ -49,4 +53,5 @@ const mapDispatchToProps = {
 
 const Connected = connect(null, mapDispatchToProps)(WithHistoryActions);
 
-export default WrappedComponent => props => <Connected WrappedComponent={WrappedComponent} otherProps={props} />;
+export default WrappedComponent => props =>
+  <Connected WrappedComponent={WrappedComponent} otherProps={props} />;
