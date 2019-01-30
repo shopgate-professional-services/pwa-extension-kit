@@ -39,6 +39,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+// eslint-ignore-next-line require-jsdoc
 var WithHistoryActions =
 /*#__PURE__*/
 function (_Component) {
@@ -78,6 +79,10 @@ function (_Component) {
 
   _createClass(WithHistoryActions, [{
     key: "render",
+
+    /**
+     * @inheritDoc
+     */
     value: function render() {
       var _this$props = this.props,
           WrappedComponent = _this$props.WrappedComponent,

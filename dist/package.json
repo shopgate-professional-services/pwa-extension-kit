@@ -1,6 +1,6 @@
 {
   "name": "@shopgate/pwa-extension-kit",
-  "version": "0.2.0-alpha.4",
+  "version": "0.2.0",
   "description": "Helpers and other libraries commonly used for extension development",
   "scripts": {
     "test": "jest",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/shopgate/pwa-extension-kit#readme",
   "devDependencies": {
     "@shopgate/eslint-config": "^6.0.1",
+    "@shopgate/pwa-common": "^6.0.1",
     "@shopgate/pwa-core": "^6.0.1",
     "@shopgate/pwa-unit-test": "^6.0.1",
     "@babel/cli": "^7.2.3",
@@ -38,13 +39,14 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.21",
+    "enzyme": "^3.8.0",
     "eslint": "^4.17.0",
     "jest": "^23.6.0",
+    "prop-types": "^15.6.2",
     "react": "^16.3.0",
     "react-dom": "^16.3.0"
   },
   "dependencies": {
-    "@shopgate/pwa-common": "^6.0.1",
     "glamor": "^2.20.40"
   }
 }
