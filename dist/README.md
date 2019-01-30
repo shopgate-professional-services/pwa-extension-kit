@@ -10,8 +10,14 @@ It contains functions, React components and wrappers which are meant to help dev
 This package follows semver. 
 
 ## Index of contents (alphabetically ordered)
-- .env - Environment related helpers [read documentation](https://github.com/shopgate/pwa-extension-kit/src/env/README.md)
-
+- `env` - Environment related helpers [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/env/README.md)
+-- `env/helpers/isIOSTheme` - detects if currently used theme is an ios theme [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/env/README.md#isIOSTheme)
+- `/helpers` - Common helper functions [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/helpers/README.md)
+-- `/helpers/TaggedLogger` - helper class for printing tagged logs [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/helpers/README.md#TaggedLogger)
+- `/connectors` - [Higher Order Components](https://reactjs.org/docs/higher-order-components.html) used as a data/actions interface
+-- `/connectors/withHistoryActions` - Provides routing actions: `historyPop`, `historyPush` and `historyReplace`. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withHistoryActions)
+-- `/connectors/withPageProductId` - Provides decoded `productId` read from a pathname of a product page. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withPageProductId)
+-- `/connectors/withPageState` - Provides `isVisible` and `isLoading` booleans. Values are taken from a page state. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withPageState)
 
 
 ## About Shopgate
@@ -24,6 +30,6 @@ apps and mobile websites for the iPhone, iPad, Android smartphones and tablets.
 
 ## License
 
-Shopgate Cloud - Extension Boilerplate is available under the Apache License, Version 2.0.
+Shopgate Connect - PWA Extension Kit is available under the Apache License, Version 2.0.
 
 See the [LICENSE](./LICENSE) file for more information.

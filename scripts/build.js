@@ -5,7 +5,7 @@ execSync('rm -rf ./dist/*');
 console.log('Done removing');
 
 console.log('Babel starts.');
-execSync('babel ./src/ --out-dir ./dist/ --ignore **/*.spec.js');
+execSync('babel ./src/ --out-dir ./dist/ --ignore \'**/*.spec.js\',\'**/*.spec.jsx\'');
 console.log('Babel done.');
 
 console.log('Preparing dist folder to be published.');

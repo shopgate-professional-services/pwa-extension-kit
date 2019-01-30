@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 ### Added
+- [Connectors as Higher Order Components] - `withPageState`, `withPageProductId`, `withHistoryActions`.
+- [Tagged Logger] helper.
 ### Changed
 ### Fixed
 ### Removed
@@ -20,3 +22,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 [Unreleased]: https://github.com/shopgate/pwa-extension-kit/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/shopgate/pwa-extension-kit/compare/v0.0.1...v0.1.0
+
+[Connectors as Higher Order Components]: https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md
+[Tagged Logger]: (https://github.com/shopgate/pwa-extension-kit/blob/master/src/helpers/README.md)
