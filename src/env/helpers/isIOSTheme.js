@@ -4,6 +4,7 @@
  * @returns {boolean}
  */
 function isIOSTheme() {
-  return process.env.THEME.includes('ios')
+  return process.env.THEME.includes('ios');
 }
+
 export default isIOSTheme;

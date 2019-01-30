@@ -1,6 +1,5 @@
 import TaggedLogger from './TaggedLogger';
 
-
 const mockedLogMethod = jest.fn();
 
 jest.mock('./_getConsole', () => () => ({

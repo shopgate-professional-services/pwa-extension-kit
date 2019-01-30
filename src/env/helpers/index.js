@@ -1,7 +1,7 @@
 import isIOSTheme from './isIOSTheme';
 
-export { isIOSTheme }
+export { isIOSTheme };
 
 export default {
   isIOSTheme,
-}
+};

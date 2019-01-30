@@ -10,23 +10,23 @@ class WithHistoryActions extends Component {
     historyReplace: PropTypes.func.isRequired,
     WrappedComponent: PropTypes.func.isRequired,
     otherProps: PropTypes.shape({}),
-  }
+  };
 
   static defaultProps = {
     otherProps: {},
-  }
+  };
 
   handlePush = (pathname) => {
     this.props.historyPush({ pathname });
-  }
+  };
 
   handleReplace = (pathname) => {
     this.props.historyReplace({ pathname });
-  }
+  };
 
   handlePop = () => {
     this.props.historyPop();
-  }
+  };
 
   render() {
     const { WrappedComponent, otherProps } = this.props;
