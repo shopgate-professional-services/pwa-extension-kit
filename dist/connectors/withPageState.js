@@ -65,12 +65,17 @@ function (_Component) {
 
       return _react.default.createElement(_context.RouteContext.Consumer, null, function (_ref) {
         var visible = _ref.visible,
-            pathname = _ref.pathname;
+            pathname = _ref.pathname,
+            pattern = _ref.pattern,
+            location = _ref.location;
         return _react.default.createElement(_providers.LoadingContext.Consumer, null, function (_ref2) {
           var isLoading = _ref2.isLoading;
           return _react.default.createElement(WrappedComponent, _extends({
             isLoading: isLoading(pathname),
-            isVisible: visible
+            isVisible: visible,
+            pathname: pathname,
+            pattern: pattern,
+            location: location
           }, otherProps));
         });
       });
