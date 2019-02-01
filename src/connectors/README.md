@@ -94,14 +94,23 @@ Connects provided component with a page state: `isLoading`, `isVisible`.
 #### Props provided
 - `isLoading (bool)` - Tells if page on which component is rendered is currently loading (usually with a visible progress bar).
 - `isVisilble (bool)` - Tells if page on which component is rendered is currently visible. Returns false when page is somewhere in the background. For example if another page is pushed to the history stack, but the one where component is rendered is still mounted via the DOM caching.
+- `pathname (string)` - The pathname of page on which component is rendered (as in `window.location.pathname`).
+- `pattern (string)` - The pattern of a route of a page on which component is rendered. Handy for some comparison (see example usage).
+- `location (string)` - The location of page on which component is rendered (as pathname but also contains query strings).
 
 #### Example usage
 ```jsx
 import React from 'react';
+import { CART_PATH } from '@shopgate/pwa-common-commerce/cart/constants';
 import { withPageState } from '@shopgate/pwa-extension-kit/connectors';
 import LoadingIndicator from '...';
 
-const MyComponent = ({isVisible, isLoading}) => {
+const MyComponent = ({isVisible, isLoading, pattern }) => {
+  // Returns null when component is rendered in the cart page.
+  // Usually this approach is only needed in general-use portals like `app-bar.*`.
+  if (pattern === CART_PATH) {
+    return null;
+  }
   if (!isVisible) {
     return null;
   }

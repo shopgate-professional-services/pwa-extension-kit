@@ -19,12 +19,20 @@ class WithPageState extends Component {
     const { WrappedComponent, ...otherProps } = this.props;
     return (
       <RouteContext.Consumer>
-        {({ visible, pathname }) => (
+        {({
+            visible,
+            pathname,
+            pattern,
+            location,
+        }) => (
           <LoadingContext.Consumer>
             {({ isLoading }) => (
               <WrappedComponent
                 isLoading={isLoading(pathname)}
                 isVisible={visible}
+                pathname={pathname}
+                pattern={pattern}
+                location={location}
                 {...otherProps}
               />
             )}

@@ -27,7 +27,15 @@ jest.mock('@shopgate/pwa-common/context', () => ({
     // eslint-disable-next-line react/prop-types
     Consumer: ({ children, ...otherProps }) => {
       const Child = children;
-      return <Child pathname="foo/bar" visible {...otherProps} />;
+      return (
+        <Child
+          pathname="/foo/bar"
+          pattern="/foo/:id"
+          location="/foo/bar?foo=bar"
+          visible
+          {...otherProps}
+        />
+      );
     },
   },
 }));
@@ -36,11 +44,14 @@ describe('connectors/withPageState', () => {
   it('should render with specified props', () => {
     const ConnectedComponent = withPageState(TestingComponent);
     const component = mount(<ConnectedComponent foo="bar" />);
-    expect(isLoadingSpy).toHaveBeenCalledWith('foo/bar');
+    expect(isLoadingSpy).toHaveBeenCalledWith('/foo/bar');
     expect(component.find('TestingComponent').props()).toEqual({
       isVisible: true,
       isLoading: true,
       foo: 'bar',
+      location: '/foo/bar?foo=bar',
+      pattern: '/foo/:id',
+      pathname: '/foo/bar',
     });
   });
 });
