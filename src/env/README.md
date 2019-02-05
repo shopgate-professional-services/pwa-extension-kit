@@ -14,12 +14,12 @@ It should not be used to obtain if current platform is either iOS or Android. To
 
 #### Example usage:
 ```jsx
-import { env } from '@shopgate/pwa-extension-kit'
+import isIOSTheme from '@shopgate/pwa-extension-kit/env/helpers/isIOSTheme';
 import ButtonOptimisedForIOS from '../components/iosButton';
 import ButtonOptimisedForGMD from '../components/gmdButton';
 
 function renderButton() {
-  if (env.isIOSTheme()) {
+  if (isIOSTheme()) {
     return <ButtonOptimisedForIOS />;
   }
   
