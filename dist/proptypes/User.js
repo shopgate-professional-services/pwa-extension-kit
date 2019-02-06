@@ -11,7 +11,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var User = _propTypes.default.shape({
   isLoggedIn: _propTypes.default.bool.isRequired,
-  id: _propTypes.default.oneOfType(_propTypes.default.string, _propTypes.default.number),
+  id: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]),
   email: _propTypes.default.string,
   firstName: _propTypes.default.string,
   lastName: _propTypes.default.string,

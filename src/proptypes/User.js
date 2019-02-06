@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 
 const User = PropTypes.shape({
   isLoggedIn: PropTypes.bool.isRequired,
-  id: PropTypes.oneOfType(
+  id: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.number
-  ),
+    PropTypes.number,
+  ]),
   email: PropTypes.string,
   firstName: PropTypes.string,
   lastName: PropTypes.string,
