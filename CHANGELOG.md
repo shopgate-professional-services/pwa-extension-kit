@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 ### Added
+### Changed
+### Fixed
+### Removed
+
+## [0.4.0]
+### Added
 - `withUser` connector
 ### Changed
 ### Fixed
@@ -38,6 +44,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [0.1.0]: https://github.com/shopgate/pwa-extension-kit/compare/v0.0.1...v0.1.0
 [0.2.0]: https://github.com/shopgate/pwa-extension-kit/compare/v0.1.0...v0.2.0
 [0.3.0]: https://github.com/shopgate/pwa-extension-kit/compare/v0.2.0...v0.3.0
+[0.4.0]: https://github.com/shopgate/pwa-extension-kit/compare/v0.3.0...v0.4.0
 
 [Connectors as Higher Order Components]: https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md
 [Tagged Logger]: (https://github.com/shopgate/pwa-extension-kit/blob/master/src/helpers/README.md)
