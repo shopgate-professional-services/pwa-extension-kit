@@ -20,6 +20,9 @@ This package follows semver.
   - `/connectors/withHistoryActions` - Provides routing actions: `historyPop`, `historyPush` and `historyReplace`. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withHistoryActions)
   - `/connectors/withPageProductId` - Provides decoded `productId` read from a pathname of a product page. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withPageProductId)
   - `/connectors/withPageState` - Provides `isVisible` and `isLoading` booleans. Values are taken from a page state. [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withPageState)
+  - `/connectors/withUser` - Provides `user` object with user data [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withUser)
+- `proptypes` - React prop types definitions.
+  - `User` - User entity definition [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/proptypes/README.md#User)
 
 
 ## About Shopgate
