@@ -1,5 +1,7 @@
 # Shopgate Connect - PWA Extension Kit
 
+[![Build Status](https://travis-ci.org/shopgate/pwa-extension-kit.svg?branch=master)](https://travis-ci.org/shopgate/pwa-extension-kit) [![Coverage Status](https://coveralls.io/repos/github/shopgate/pwa-extension-kit/badge.svg?branch=master)](https://coveralls.io/github/shopgate/pwa-extension-kit?branch=master)
+
 Extra library for extra helpers, components and other often used snippets that are making the extensions development easier.
 
 ## Purpose

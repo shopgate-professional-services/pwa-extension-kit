@@ -122,3 +122,33 @@ const MyComponent = ({isVisible, isLoading, pattern }) => {
   return <div>Hello world!</div>;
 }
 ```
+
+### withUser
+Connects provided component with a user data state.
+
+#### Props provided
+- `user (Object)` - User data object with following properties:
+  - `isLoggedIn (bool)` - Whether the user is logged in.
+  - `id (string|number|null)` - User id, null when user is logged out.
+  - `email (string|null)` - User email, null when user is logged out.
+  - `firstName (string|null)` - User first name, null when user is logged out.
+  - `lastName (string|null)` - User last name (can contain middle name in rare edge cases), null when user is logged out.
+  - `displayName (string|null)` - User name, ready to be displayed in the UI, null when user is logged out.
+
+#### Example usage
+```jsx
+import { withUser } from '@shopgate/pwa-extension-kit/connectors';
+import User from '@shopgate/pwa-extension-kit/proptypes';
+
+const MyComponent = ({ user }) => {
+  if (!user.isLoggedIn) {
+    return null;
+  }
+  
+  return <div>Hello {user.displayName}</div>
+}
+
+MyComponent.propTypes = {
+  user: User.isRequired,
+}
+```
