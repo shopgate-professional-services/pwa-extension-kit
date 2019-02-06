@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 ### Added
+- `withUser` connector
 ### Changed
 ### Fixed
 ### Removed
