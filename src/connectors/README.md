@@ -151,4 +151,6 @@ const MyComponent = ({ user }) => {
 MyComponent.propTypes = {
   user: User.isRequired,
 }
+
+export default withUser(MyComponent);
 ```
