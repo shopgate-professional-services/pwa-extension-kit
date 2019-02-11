@@ -10,7 +10,7 @@ import { RouteContext } from '@shopgate/pwa-common/context';
 class WithPageState extends Component {
   static propTypes = {
     WrappedComponent: PropTypes.func.isRequired,
-  }
+  };
 
   /**
    * @inheritDoc

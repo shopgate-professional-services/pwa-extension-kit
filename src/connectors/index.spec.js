@@ -2,6 +2,8 @@ import connectors, {
   withPageProductId,
   withHistoryActions,
   withPageState,
+  withThemeComponents,
+  withProduct,
 } from './index';
 
 describe('data/connectors', () => {
@@ -10,11 +12,15 @@ describe('data/connectors', () => {
     expect(typeof connectors.withHistoryActions).toBe('function');
     expect(typeof connectors.withPageProductId).toBe('function');
     expect(typeof connectors.withPageState).toBe('function');
+    expect(typeof connectors.withThemeComponents).toBe('function');
+    expect(typeof connectors.withProduct).toBe('function');
   });
 
   it('should export withPageProductId as named export', () => {
     expect(typeof withHistoryActions).toBe('function');
     expect(typeof withPageProductId).toBe('function');
     expect(typeof withPageState).toBe('function');
+    expect(typeof withThemeComponents).toBe('function');
+    expect(typeof withProduct).toBe('function');
   });
 });
