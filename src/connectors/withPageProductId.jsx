@@ -14,7 +14,7 @@ const logger = new TaggedLogger('withPageProductId');
 function decodeProductIdFromParams(params) {
   let decodedProductId = null;
   if (typeof params.productId === 'undefined') {
-    const message = 'Connector is probably rendered outside of page containing "productId" pattern param. Please check documentation for more information: https://github.com/shopgate/pwa-extension-kit/blob/master/src/data/connectors/README.md#withPageProductId';
+    const message = 'Connector is probably rendered outside of page containing "productId" pattern param. Please check documentation for more information: https://github.com/shopgate-professional-services/pwa-extension-kit/blob/master/src/data/connectors/README.md#withPageProductId';
     logger.error(message);
 
     return decodedProductId;

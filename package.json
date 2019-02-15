@@ -1,6 +1,6 @@
 {
-  "name": "@shopgate/pwa-extension-kit",
-  "version": "0.4.0",
+  "name": "@shopgate-ps/pwa-extension-kit",
+  "version": "0.4.1",
   "description": "Helpers and other libraries commonly used for extension development",
   "scripts": {
     "test": "jest",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shopgate/pwa-extension-kit.git"
+    "url": "git+https://github.com/shopgate-professional-services/pwa-extension-kit.git"
   },
   "keywords": [
     "shopgate",
@@ -19,9 +19,9 @@
   "author": "Shopgate GmbH",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/shopgate/pwa-extension-kit/issues"
+    "url": "https://github.com/shopgate-professional-services/pwa-extension-kit/issues"
   },
-  "homepage": "https://github.com/shopgate/pwa-extension-kit#readme",
+  "homepage": "https://github.com/shopgate-professional-services/pwa-extension-kit#readme",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",

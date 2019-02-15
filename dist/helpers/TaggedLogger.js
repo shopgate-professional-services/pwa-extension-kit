@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var console = (0, _getConsole.default)();
 /**
  * Tagged Logger.
- * @link https://github.com/shopgate/pwa-extension-kit/blob/master/helpers/README.md
+ * @link https://github.com/shopgate-professional-services/pwa-extension-kit/blob/master/helpers/README.md
  */
 
 var TaggedLogger =

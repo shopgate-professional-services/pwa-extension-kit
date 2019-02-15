@@ -6,4 +6,4 @@ All objects here are valid PropTypes objects (ready to be used in React componen
 ### User
 User data object. Properties and example usage is described in [withUser] connector.
 
-[withUser]: https://github.com/shopgate/pwa-extension-kit/blob/master/src/connectors/README.md#withUser
+[withUser]: https://github.com/shopgate-professional-services/pwa-extension-kit/blob/master/src/connectors/README.md#withUser

@@ -20,7 +20,7 @@ Everywhere as a React component rendered within the PWA app.
 #### Example usage
 ```jsx
 import React, { Component } from 'react'
-import { withHistoryActions } from '@shopgate/pwa-extension-kit/connectors';
+import { withHistoryActions } from '@shopgate-ps/pwa-extension-kit/connectors';
 
 class MyComponent extends Component {
   handleClick = () => {
@@ -54,7 +54,7 @@ This connector will only work while being rendered on a page which has :productI
 ##### Getting productId as is
 ```jsx
 // Page pathname where component is rendered: '/item/31323334'
-import { withPageProductId } from '@shopgate/pwa-extension-kit/data/connectors';
+import { withPageProductId } from '@shopgate-ps/pwa-extension-kit/data/connectors';
 
 // Will produce <div>This product id is: 1234</div>
 const MyComponent = ({ productId}) => (<div>This product id is: ${productId}</div);
@@ -68,7 +68,7 @@ In this case, in order to read the `baseProductId` (product id of a variant's pa
 ```jsx
 // Page pathname where component is rendered: '/item/313233342d76617269616e742d31'
 import { connect } from 'react-redux'; // Provides connection to redux.
-import { withPageProductId } from '@shopgate/pwa-extension-kit/data/connectors'; // Fetches and decodes productId from a pathname
+import { withPageProductId } from '@shopgate-ps/pwa-extension-kit/data/connectors'; // Fetches and decodes productId from a pathname
 import { getBaseProductId } from '@shopgate/pwa-common-commerce/product/selectors'; // Makes sure productId always comes from base product.
 
 // Will produce <div>This product id is: 1234</div>
@@ -102,10 +102,10 @@ Connects provided component with a page state: `isLoading`, `isVisible`.
 ```jsx
 import React from 'react';
 import { CART_PATH } from '@shopgate/pwa-common-commerce/cart/constants';
-import { withPageState } from '@shopgate/pwa-extension-kit/connectors';
+import { withPageState } from '@shopgate-ps/pwa-extension-kit/connectors';
 import LoadingIndicator from '...';
 
-const MyComponent = ({isVisible, isLoading, pattern }) => {
+const MyComponent = ({ isVisible, isLoading, pattern }) => {
   // Returns null when component is rendered in the cart page.
   // Usually this approach is only needed in general-use portals like `app-bar.*`.
   if (pattern === CART_PATH) {
@@ -121,6 +121,8 @@ const MyComponent = ({isVisible, isLoading, pattern }) => {
   
   return <div>Hello world!</div>;
 }
+
+export default withPageState(MyComponent);
 ```
 
 ### withUser
@@ -137,8 +139,8 @@ Connects provided component with a user data state.
 
 #### Example usage
 ```jsx
-import { withUser } from '@shopgate/pwa-extension-kit/connectors';
-import User from '@shopgate/pwa-extension-kit/proptypes';
+import { withUser } from '@shopgate-ps/pwa-extension-kit/connectors';
+import User from '@shopgate-ps/pwa-extension-kit/proptypes';
 
 const MyComponent = ({ user }) => {
   if (!user.isLoggedIn) {
