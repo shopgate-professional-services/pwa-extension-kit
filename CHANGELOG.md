@@ -10,6 +10,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Fixed
 ### Removed
 
+## [0.5.0]
+### Added
+- `withThemeComponents` connector
+- `withProductContext` connector
+- `ProductCharacteristics` component
+### Changed
+### Fixed
+### Removed
+
 ## [0.4.1]
 ### Added
 ### Changed
