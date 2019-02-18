@@ -15,7 +15,7 @@ Currently supported methods are:
 
 #### Example usage:
 ```jsx
-import { TaggedLogger} from '@shopgate/pwa-extension-kit/helpers'
+import { TaggedLogger} from '@shopgate-ps/pwa-extension-kit/helpers'
 
 function veryComplexFunctionOrClass() {
   const logger = new TaggedLogger('MyVeryComplexFunctionOrClass');

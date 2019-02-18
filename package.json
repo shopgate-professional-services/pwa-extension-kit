@@ -1,6 +1,6 @@
 {
-  "name": "@shopgate/pwa-extension-kit",
-  "version": "0.3.0",
+  "name": "@shopgate-ps/pwa-extension-kit",
+  "version": "0.4.1",
   "description": "Helpers and other libraries commonly used for extension development",
   "scripts": {
     "test": "jest",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shopgate/pwa-extension-kit.git"
+    "url": "git+https://github.com/shopgate-professional-services/pwa-extension-kit.git"
   },
   "keywords": [
     "shopgate",
@@ -19,14 +19,10 @@
   "author": "Shopgate GmbH",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/shopgate/pwa-extension-kit/issues"
+    "url": "https://github.com/shopgate-professional-services/pwa-extension-kit/issues"
   },
-  "homepage": "https://github.com/shopgate/pwa-extension-kit#readme",
+  "homepage": "https://github.com/shopgate-professional-services/pwa-extension-kit#readme",
   "devDependencies": {
-    "@shopgate/eslint-config": "^6.0.1",
-    "@shopgate/pwa-common": "^6.0.1",
-    "@shopgate/pwa-core": "^6.0.1",
-    "@shopgate/pwa-unit-test": "^6.0.1",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.2.3",
@@ -36,9 +32,14 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.2.0",
+    "@shopgate/eslint-config": "^6.0.1",
+    "@shopgate/pwa-common": "^6.0.1",
+    "@shopgate/pwa-core": "^6.0.1",
+    "@shopgate/pwa-unit-test": "^6.0.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.21",
+    "coveralls": "^3.0.2",
     "enzyme": "^3.8.0",
     "eslint": "^4.17.0",
     "jest": "^23.6.0",
@@ -48,5 +49,9 @@
   },
   "dependencies": {
     "glamor": "^2.20.40"
+  },
+  "peerDependencies": {
+    "react-redux": "^5.0.6",
+    "reselect": "^3.0.1"
   }
 }

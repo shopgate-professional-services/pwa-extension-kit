@@ -14,7 +14,7 @@ It should not be used to obtain if current platform is either iOS or Android. To
 
 #### Example usage:
 ```jsx
-import isIOSTheme from '@shopgate/pwa-extension-kit/env/helpers/isIOSTheme';
+import isIOSTheme from '@shopgate-ps/pwa-extension-kit/env/helpers/isIOSTheme';
 import ButtonOptimisedForIOS from '../components/iosButton';
 import ButtonOptimisedForGMD from '../components/gmdButton';
 

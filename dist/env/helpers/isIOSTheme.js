@@ -7,7 +7,7 @@ exports.default = void 0;
 
 /**
  * Checks if current theme is an iOS theme.
- * @link https://github.com/shopgate/pwa-extension-kit/src/env/README.md
+ * @link https://github.com/shopgate-professional-services/pwa-extension-kit/src/env/README.md
  * @returns {boolean}
  */
 function isIOSTheme() {

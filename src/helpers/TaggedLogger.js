@@ -3,7 +3,7 @@ import getConsole from './_getConsole';
 const console = getConsole();
 /**
  * Tagged Logger.
- * @link https://github.com/shopgate/pwa-extension-kit/blob/master/helpers/README.md
+ * @link https://github.com/shopgate-professional-services/pwa-extension-kit/blob/master/helpers/README.md
  */
 class TaggedLogger {
   /**
