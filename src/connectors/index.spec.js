@@ -3,7 +3,7 @@ import connectors, {
   withHistoryActions,
   withPageState,
   withThemeComponents,
-  withProduct,
+  withProductContext,
   withUser,
 } from './index';
 
@@ -14,7 +14,7 @@ describe('data/connectors', () => {
     expect(typeof connectors.withPageProductId).toBe('function');
     expect(typeof connectors.withPageState).toBe('function');
     expect(typeof connectors.withThemeComponents).toBe('function');
-    expect(typeof connectors.withProduct).toBe('function');
+    expect(typeof connectors.withProductContext).toBe('function');
     expect(typeof connectors.withUser).toBe('function');
   });
 
@@ -24,6 +24,6 @@ describe('data/connectors', () => {
     expect(typeof withPageState).toBe('function');
     expect(typeof withUser).toBe('function');
     expect(typeof withThemeComponents).toBe('function');
-    expect(typeof withProduct).toBe('function');
+    expect(typeof withProductContext).toBe('function');
   });
 });

@@ -21,6 +21,12 @@ Object.defineProperty(exports, "withHistoryActions", {
     return _withHistoryActions.default;
   }
 });
+Object.defineProperty(exports, "withUser", {
+  enumerable: true,
+  get: function get() {
+    return _withUser.default;
+  }
+});
 Object.defineProperty(exports, "withThemeComponents", {
   enumerable: true,
   get: function get() {
@@ -41,6 +47,8 @@ var _withPageState = _interopRequireDefault(require("./withPageState"));
 
 var _withHistoryActions = _interopRequireDefault(require("./withHistoryActions"));
 
+var _withUser = _interopRequireDefault(require("./withUser"));
+
 var _withThemeComponents = _interopRequireDefault(require("./withThemeComponents"));
 
 var _withProductContext = _interopRequireDefault(require("./withProductContext"));
@@ -51,6 +59,7 @@ var _default = {
   withHistoryActions: _withHistoryActions.default,
   withPageProductId: _withPageProductId.default,
   withPageState: _withPageState.default,
+  withUser: _withUser.default,
   withThemeComponents: _withThemeComponents.default,
   withProductContext: _withProductContext.default
 };
