@@ -40,21 +40,21 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 /**
- * WithThemeComponents component.
+ * WithProductContext component.
  */
 // eslint-disable-next-line react/prefer-stateless-function, require-jsdoc
-var WithThemeComponents =
+var WithProductContext =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(WithThemeComponents, _Component);
+  _inherits(WithProductContext, _Component);
 
-  function WithThemeComponents() {
-    _classCallCheck(this, WithThemeComponents);
+  function WithProductContext() {
+    _classCallCheck(this, WithProductContext);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(WithThemeComponents).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(WithProductContext).apply(this, arguments));
   }
 
-  _createClass(WithThemeComponents, [{
+  _createClass(WithProductContext, [{
     key: "render",
 
     /**
@@ -66,20 +66,22 @@ function (_Component) {
           otherProps = _objectWithoutProperties(_this$props, ["WrappedComponent"]);
 
       return _react.default.createElement(_context.Theme, null, function (props) {
-        var contexts = props.contexts,
-            components = _objectWithoutProperties(props, ["contexts"]);
-
-        return _react.default.createElement(WrappedComponent, _extends({}, components, otherProps));
+        var ProductContext = props.contexts.ProductContext;
+        return _react.default.createElement(ProductContext.Consumer, null, function (productParams) {
+          return _react.default.createElement(WrappedComponent, _extends({
+            productContext: productParams
+          }, otherProps));
+        });
       });
     }
   }]);
 
-  return WithThemeComponents;
+  return WithProductContext;
 }(_react.Component);
 
 var _default = function _default(WrappedComponent) {
   return function (props) {
-    return _react.default.createElement(WithThemeComponents, _extends({
+    return _react.default.createElement(WithProductContext, _extends({
       WrappedComponent: WrappedComponent
     }, props));
   };

@@ -27,6 +27,12 @@ Object.defineProperty(exports, "withThemeComponents", {
     return _withThemeComponents.default;
   }
 });
+Object.defineProperty(exports, "withProductContext", {
+  enumerable: true,
+  get: function get() {
+    return _withProductContext.default;
+  }
+});
 exports.default = void 0;
 
 var _withPageProductId = _interopRequireDefault(require("./withPageProductId"));
@@ -37,12 +43,15 @@ var _withHistoryActions = _interopRequireDefault(require("./withHistoryActions")
 
 var _withThemeComponents = _interopRequireDefault(require("./withThemeComponents"));
 
+var _withProductContext = _interopRequireDefault(require("./withProductContext"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
   withHistoryActions: _withHistoryActions.default,
   withPageProductId: _withPageProductId.default,
   withPageState: _withPageState.default,
-  withThemeComponents: _withThemeComponents.default
+  withThemeComponents: _withThemeComponents.default,
+  withProductContext: _withProductContext.default
 };
 exports.default = _default;
