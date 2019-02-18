@@ -121,4 +121,64 @@ const MyComponent = ({isVisible, isLoading, pattern }) => {
   
   return <div>Hello world!</div>;
 }
+
+export default withPageState(MyComponent);
+```
+
+### withProductContext
+Connects provided component with a product context
+
+#### Props provided
+- `options (object)` - Current selected product options
+- `productId (string)` - Id of the current shown product
+- `variantId (string)` -  Id of the current selected variant
+- `conditioner (Function)` - Helper class for ProductCharacteristic component
+
+
+#### Example usage
+```jsx
+import React from 'react';
+import { withProductContext } from '@shopgate/pwa-extension-kit/connectors';
+
+const MyComponent = ({ options, productId, variantId, conditioner }) => {
+  
+  return (
+    <ProductCharacteristics
+        productId={productId}
+        variantId={variantId}
+        render={this.renderer}
+        conditioner={conditioner}
+        finishTimeout={200}
+      />
+  );
+}
+
+export default withProductContext(MyComponent);
+```
+
+### withThemeComponents
+Connects provided component with some components provided by the Theme.
+
+#### Props provided
+- `AppBar (ReactComponent)` - <AppBar> Component from the Theme
+- `Drawer (ReactComponent)` - <Drawer> Component from the Theme
+- `View (ReactComponent)` -  <View> Component from the Theme
+
+
+#### Example usage
+```jsx
+import React from 'react';
+import { withThemeComponents } from '@shopgate/pwa-extension-kit/connectors';
+
+const MyComponent = ({ AppBar, View }) => {
+  
+  return (
+    <View>
+        <AppBar>
+        <h1>My custom page</h1>
+    </View>
+  );
+}
+
+export default withThemeComponents(MyComponent);
 ```

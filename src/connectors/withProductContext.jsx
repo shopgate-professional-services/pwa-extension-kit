@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Theme } from '@shopgate/pwa-common/context';
 
 /**
- * WithProduct component.
+ * WithProductContext component.
  */
 // eslint-disable-next-line react/prefer-stateless-function, require-jsdoc
 class WithProductContext extends Component {
@@ -23,7 +23,9 @@ class WithProductContext extends Component {
 
           return (
             <ProductContext.Consumer>
-              {productParams => <WrappedComponent {...productParams} {...otherProps} /> }
+              {productParams =>
+                <WrappedComponent productContext={productParams} {...otherProps} />
+              }
             </ProductContext.Consumer>
           );
         }}

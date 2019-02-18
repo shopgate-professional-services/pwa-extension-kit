@@ -42,10 +42,12 @@ describe('connectors/withProduct', () => {
     const component = mount(<ProductCharacteristics />);
 
     expect(component.find(MockedComponent).props()).toMatchObject({
-      conditioner: {},
-      options: {},
-      productId: '123',
-      variantId: '123-45',
+      productContext: {
+        conditioner: {},
+        options: {},
+        productId: '123',
+        variantId: '123-45',
+      },
     });
   });
 });

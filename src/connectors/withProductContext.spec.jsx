@@ -44,10 +44,12 @@ describe('connectors/withProduct', () => {
 
     expect(component.find('TestingComponent').props()).toEqual({
       foo: 'bar',
-      options: {},
-      conditioner: {},
-      productId: '123',
-      variantId: '123-45',
+      productContext: {
+        options: {},
+        conditioner: {},
+        productId: '123',
+        variantId: '123-45',
+      },
     });
   });
 });
