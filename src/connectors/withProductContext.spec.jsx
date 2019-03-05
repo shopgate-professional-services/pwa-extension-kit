@@ -37,7 +37,7 @@ jest.mock('@shopgate/pwa-common/context', () => ({
   },
 }));
 
-describe('connectors/withProduct', () => {
+describe('connectors/withProductContext', () => {
   it('should render with specified props', () => {
     const ConnectedComponent = WithProductContext(TestingComponent);
     const component = mount(<ConnectedComponent foo="bar" />);

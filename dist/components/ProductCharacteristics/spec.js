@@ -1,16 +1,16 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _enzyme = require("enzyme");
+
+var _Conditioner = _interopRequireDefault(require("@shopgate/pwa-core/classes/Conditioner"));
 
 var _index = _interopRequireDefault(require("./index"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
@@ -20,13 +20,58 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var MockedComponent = function MockedComponent() {
-  return null;
-};
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-jest.mock('@shopgate/pwa-common/components/ProductCharacteristics', function () {
-  return function (props) {
-    return _react.default.createElement(MockedComponent, props);
+var mockedConditioner = new _Conditioner.default();
+var mockedMapStateToPropsResult = {
+  variants: {
+    products: [{
+      id: '32050590001000',
+      characteristics: {
+        1: '1',
+        2: '11'
+      }
+    }, {
+      id: '32050590000950',
+      characteristics: {
+        1: '2',
+        2: '12'
+      }
+    }],
+    characteristics: [{
+      id: '1',
+      label: 'Color',
+      values: [{
+        id: '1',
+        label: 'BLACK-WHITE (9000)'
+      }, {
+        id: '2',
+        label: 'RED-WHITE (1000)'
+      }]
+    }, {
+      id: '2',
+      label: 'Size',
+      values: [{
+        id: '11',
+        label: '7'
+      }, {
+        id: '12',
+        label: '7.5'
+      }]
+    }]
+  }
+};
+jest.mock('react-redux', function () {
+  return {
+    connect: function connect(mapStateToProps) {
+      return function (Component) {
+        return function (props) {
+          return _react.default.createElement(Component, _extends({
+            variants: mockedMapStateToPropsResult.variants
+          }, props));
+        };
+      };
+    }
   };
 });
 jest.mock('@shopgate/pwa-common/context', function () {
@@ -59,7 +104,7 @@ jest.mock('@shopgate/pwa-common/context', function () {
                 options: {},
                 productId: "123",
                 variantId: "123-45",
-                conditioner: {}
+                conditioner: mockedConditioner
               }, contextProps));
             }
           }
@@ -70,16 +115,64 @@ jest.mock('@shopgate/pwa-common/context', function () {
     }
   };
 });
-describe('connectors/withProduct', function () {
-  it('should render with specified props', function () {
-    var component = (0, _enzyme.mount)(_react.default.createElement(_index.default, null));
-    expect(component.find(MockedComponent).props()).toMatchObject({
-      productContext: {
-        conditioner: {},
-        options: {},
-        productId: '123',
-        variantId: '123-45'
-      }
-    });
+describe('components/ProductCharacteristics', function () {
+  it('should render', function () {
+    var component = (0, _enzyme.mount)(_react.default.createElement(_index.default, {
+      render: jest.fn()
+    }));
+    expect(component).toMatchSnapshot();
+  });
+  it('should call render prop', function () {
+    var renderer = jest.fn();
+    (0, _enzyme.mount)(_react.default.createElement(_index.default, {
+      render: renderer
+    }));
+    var expected1 = {
+      charRef: {
+        current: null
+      },
+      disabled: false,
+      highlight: false,
+      id: '1',
+      key: '1',
+      label: 'Color',
+      selected: null,
+      values: [{
+        id: '1',
+        label: 'BLACK-WHITE (9000)',
+        selectable: true
+      }, {
+        id: '2',
+        label: 'RED-WHITE (1000)',
+        selectable: true
+      }]
+    };
+    var expected2 = {
+      charRef: {
+        current: null
+      },
+      disabled: true,
+      highlight: false,
+      id: '2',
+      key: '2',
+      label: 'Size',
+      selected: null,
+      values: [{
+        id: '11',
+        label: '7',
+        selectable: true
+      }, {
+        id: '12',
+        label: '7.5',
+        selectable: true
+      }]
+    };
+    expect(renderer).toHaveBeenCalledTimes(2);
+    var args1 = renderer.mock.calls[0][0];
+    expect(_typeof(args1.select)).toBe('function');
+    expect(args1).toMatchObject(expected1);
+    var args2 = renderer.mock.calls[1][0];
+    expect(_typeof(args2.select)).toBe('function');
+    expect(args2).toMatchObject(expected2);
   });
 });

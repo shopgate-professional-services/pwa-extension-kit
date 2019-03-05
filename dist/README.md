@@ -21,6 +21,8 @@ This package follows semver.
   - `/connectors/withPageProductId` - Provides decoded `productId` read from a pathname of a product page. [read documentation](https://github.com/shopgate-professional-services/pwa-extension-kit/blob/master/src/connectors/README.md#withPageProductId)
   - `/connectors/withPageState` - Provides `isVisible` and `isLoading` booleans. Values are taken from a page state. [read documentation](https://github.com/shopgate-professional-services/pwa-extension-kit/blob/master/src/connectors/README.md#withPageState)
   - `/connectors/withUser` - Provides `user` object with user data [read documentation](https://github.com/shopgate-professional-services/pwa-extension-kit/blob/master/src/connectors/README.md#withUser)
+  - `/connectors/withThemeComponents` - Provides Components from the theme (AppBar, Drawer, View, ProductCard) [read documentation](https://github.com/shopgate-professional-services/pwa-extension-kit/blob/master/src/connectors/README.md#withThemeComponents)
+  - `/connectors/withProductContext` - Provides product context [read documentation](https://github.com/shopgate-professional-services/pwa-extension-kit/blob/master/src/connectors/README.md#withProductContext)
 - `/components` - Common Components  [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/components/README.md)
   - `/components/ProductCharacteristics` - Component to show some product characteristics aka variant selection [read documentation](https://github.com/shopgate/pwa-extension-kit/blob/master/src/helpers/README.md#TaggedLogger)
 - `proptypes` - React prop types definitions.

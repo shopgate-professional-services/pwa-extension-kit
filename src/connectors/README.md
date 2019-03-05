@@ -189,12 +189,14 @@ export default withProductContext(MyComponent);
 ```
 
 ### withThemeComponents
-Connects provided component with some components provided by the Theme.
+Connects provided component with some components provided by the Theme. 
+Theme components are theme specific - maintain functionality with theme specific UI.
+
 
 #### Props provided
-- `AppBar (ReactComponent)` - <AppBar> Component from the Theme
-- `Drawer (ReactComponent)` - <Drawer> Component from the Theme
-- `View (ReactComponent)` -  <View> Component from the Theme
+- `AppBar (ReactComponent)` - <AppBar> Component from the Theme. It can be used to add our default header to your custom page.   
+- `Drawer (ReactComponent)` - <Drawer> Component from the Theme. It is intended to be used to provide an additional UI layer to a page.
+- `View (ReactComponent)` -  <View> Component from the Theme. Wrapper if you want to create a custom page.
 
 
 #### Example usage

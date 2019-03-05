@@ -1,6 +1,6 @@
 import kit, { env, connectors, helpers } from './index';
 
-describe('env/helpers', () => {
+describe('index', () => {
   it('should export all functions as default', () => {
    expect(typeof kit).toBe('object');
    expect(typeof kit.env).toBe('object');
