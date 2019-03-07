@@ -9,8 +9,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _providers = require("@shopgate/pwa-common/providers/");
-
 var _context = require("@shopgate/pwa-common/context");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -42,21 +40,21 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 /**
- * WithPageState component.
+ * WithProductContext component.
  */
 // eslint-disable-next-line react/prefer-stateless-function, require-jsdoc
-var WithPageState =
+var WithProductContext =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(WithPageState, _Component);
+  _inherits(WithProductContext, _Component);
 
-  function WithPageState() {
-    _classCallCheck(this, WithPageState);
+  function WithProductContext() {
+    _classCallCheck(this, WithProductContext);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(WithPageState).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(WithProductContext).apply(this, arguments));
   }
 
-  _createClass(WithPageState, [{
+  _createClass(WithProductContext, [{
     key: "render",
 
     /**
@@ -67,31 +65,23 @@ function (_Component) {
           WrappedComponent = _this$props.WrappedComponent,
           otherProps = _objectWithoutProperties(_this$props, ["WrappedComponent"]);
 
-      return _react.default.createElement(_context.RouteContext.Consumer, null, function (_ref) {
-        var visible = _ref.visible,
-            pathname = _ref.pathname,
-            pattern = _ref.pattern,
-            location = _ref.location;
-        return _react.default.createElement(_providers.LoadingContext.Consumer, null, function (_ref2) {
-          var isLoading = _ref2.isLoading;
+      return _react.default.createElement(_context.Theme, null, function (props) {
+        var ProductContext = props.contexts.ProductContext;
+        return _react.default.createElement(ProductContext.Consumer, null, function (productParams) {
           return _react.default.createElement(WrappedComponent, _extends({
-            isLoading: isLoading(pathname),
-            isVisible: visible,
-            pathname: pathname,
-            pattern: pattern,
-            location: location
+            productContext: productParams
           }, otherProps));
         });
       });
     }
   }]);
 
-  return WithPageState;
+  return WithProductContext;
 }(_react.Component);
 
 var _default = function _default(WrappedComponent) {
   return function (props) {
-    return _react.default.createElement(WithPageState, _extends({
+    return _react.default.createElement(WithProductContext, _extends({
       WrappedComponent: WrappedComponent
     }, props));
   };

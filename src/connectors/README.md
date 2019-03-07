@@ -156,3 +156,63 @@ MyComponent.propTypes = {
 
 export default withUser(MyComponent);
 ```
+
+### withProductContext
+Connects provided component with a product context
+
+#### Props provided
+- `options (object)` - Current selected product options
+- `productId (string)` - Id of the current shown product
+- `variantId (string)` -  Id of the current selected variant
+- `conditioner (Function)` - Helper class for ProductCharacteristic component
+
+
+#### Example usage
+```jsx
+import React from 'react';
+import { withProductContext } from '@shopgate/pwa-extension-kit/connectors';
+
+const MyComponent = ({ options, productId, variantId, conditioner }) => {
+  
+  return (
+    <ProductCharacteristics
+        productId={productId}
+        variantId={variantId}
+        render={this.renderer}
+        conditioner={conditioner}
+        finishTimeout={200}
+      />
+  );
+}
+
+export default withProductContext(MyComponent);
+```
+
+### withThemeComponents
+Connects provided component with some components provided by the Theme. 
+Theme components are theme specific - maintain functionality with theme specific UI.
+
+
+#### Props provided
+- `AppBar (ReactComponent)` - <AppBar> Component from the Theme. It can be used to add our default header to your custom page.   
+- `Drawer (ReactComponent)` - <Drawer> Component from the Theme. It is intended to be used to provide an additional UI layer to a page.
+- `View (ReactComponent)` -  <View> Component from the Theme. Wrapper if you want to create a custom page.
+
+
+#### Example usage
+```jsx
+import React from 'react';
+import { withThemeComponents } from '@shopgate/pwa-extension-kit/connectors';
+
+const MyComponent = ({ AppBar, View }) => {
+  
+  return (
+    <View>
+        <AppBar>
+        <h1>My custom page</h1>
+    </View>
+  );
+}
+
+export default withThemeComponents(MyComponent);
+```
