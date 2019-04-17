@@ -12,7 +12,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [0.6.1]
 ### Changed
-- `withHistoryActions` added options to historyPush and historyReplace
+- `withHistoryActions` added params to historyPush and historyReplace
 - `withPageState` now receiving route state
 
 ## [0.6.0]
