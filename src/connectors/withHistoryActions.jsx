@@ -1,9 +1,9 @@
+/* eslint-disable require-jsdoc */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { historyPush, historyReplace, historyPop } from '@shopgate/pwa-common/actions/router';
 
-// eslint-ignore-next-line require-jsdoc
 class WithHistoryActions extends Component {
   static propTypes = {
     historyPop: PropTypes.func.isRequired,
@@ -17,12 +17,12 @@ class WithHistoryActions extends Component {
     otherProps: {},
   };
 
-  handlePush = (pathname) => {
-    this.props.historyPush({ pathname });
+  handlePush = (pathname, options = { state: {} }) => {
+    this.props.historyPush({ pathname, options });
   };
 
-  handleReplace = (pathname) => {
-    this.props.historyReplace({ pathname });
+  handleReplace = (pathname, options = { state: {} }) => {
+    this.props.historyReplace({ pathname, options });
   };
 
   handlePop = () => {
