@@ -39,16 +39,18 @@ describe('connectors/withHistoryActions', () => {
     const actions = ['historyPush', 'historyPop', 'historyReplace'];
     actions.forEach((action) => {
       it(`should call ${action}`, () => {
-        const pathname = 'PATHNAME';
-        const options = { state: {} };
+        const params = {
+          pathname: 'PATHNAME',
+          options: { state: {} },
+        };
 
         if (action === 'historyPop') {
           props[action]();
           expect(mockedAction).toHaveBeenCalledWith(action);
           return;
         }
-        props[action](pathname, options);
-        expect(mockedAction).toHaveBeenCalledWith(action, { pathname, options });
+        props[action](params);
+        expect(mockedAction).toHaveBeenCalledWith(action, params);
       });
     });
   });
