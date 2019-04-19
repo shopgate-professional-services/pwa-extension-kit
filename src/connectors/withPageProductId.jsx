@@ -52,8 +52,8 @@ class WithPageProductId extends Component {
 
 /**
  * Returns a Wrapped Component with automatic props.productId read from RouteContext.
- * @param {function} WrappedComponent Component which will be wrapped with data connector.
- * @returns {function} React component.
+ * @param {Function} WrappedComponent Component which will be wrapped with data connector.
+ * @returns {Function} React component.
  */
 const withPageProductId = WrappedComponent => props =>
   <WithPageProductId WrappedComponent={WrappedComponent} {...props} />;

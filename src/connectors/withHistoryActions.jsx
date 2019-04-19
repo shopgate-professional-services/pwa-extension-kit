@@ -17,12 +17,20 @@ class WithHistoryActions extends Component {
     otherProps: {},
   };
 
-  handlePush = (params) => {
-    this.props.historyPush(params);
+  handlePush = (pathname, state = {}, silent = false) => {
+    this.props.historyPush({
+      pathname,
+      state,
+      silent,
+    });
   };
 
-  handleReplace = (params) => {
-    this.props.historyReplace(params);
+  handleReplace = (pathname, state = {}, silent = false) => {
+    this.props.historyReplace({
+      pathname,
+      state,
+      silent,
+    });
   };
 
   handlePop = () => {

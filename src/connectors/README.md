@@ -13,8 +13,8 @@ Connects provided component with a wrapper behind internal PWA routing actions.
 Everywhere as a React component rendered within the PWA app.
 
 #### Props provided
-- `historyPush(params: object)` - Opens new page in a safe way. Detects link types. Internal links (deep links) which are handled by the PWA app. External links are handled by opening the in-app-browser.
-- `historyReplace(params: object)` - Replaces current page with provided pathname if pathname is an internal link. If pathname is external link it works exactly as `historyPush`. If you intend to replace your current page with in-app-browser, use combination of `historyPush` and `historyPop` instead.
+- `historyPush(pathname: string, state: object[optional], silent: boolean[optional])` - Opens new page in a safe way. Detects link types. Internal links (deep links) which are handled by the PWA app. External links are handled by opening the in-app-browser.
+- `historyReplace(pathname: string, state: object[optional], silent: boolean[optional])` - Replaces current page with provided pathname if pathname is an internal link. If pathname is external link it works exactly as `historyPush`. If you intend to replace your current page with in-app-browser, use combination of `historyPush` and `historyPop` instead.
 - `historyPop()` - Pops current page from a history stack. Works like a "back" button.
 
 #### Example usage
@@ -23,12 +23,20 @@ import React, { Component } from 'react'
 import { withHistoryActions } from '@shopgate-ps/pwa-extension-kit/connectors';
 
 class MyComponent extends Component {
-  const params = {
-    pathname: this.props.href,
-    state: this.props.state || {},
+  const state: {
+    title: 'Example Page',
+    filters: {
+      type: {
+        id: 'filterId',
+        label: 'filterLabel',
+        source: 'filterSource',
+        type: 'multiselect',
+        value: {id: 'example id', label: 'example label'},
+      }
+    }
   }
   handleClick = () => {
-    this.props.historyPush(params);
+    this.props.historyPush('/example', state);
   }
   handleDismiss = () => {
     this.props.historyPop();
@@ -101,6 +109,9 @@ Connects provided component with a page state: `isLoading`, `isVisible`.
 - `pathname (string)` - The pathname of page on which component is rendered (as in `window.location.pathname`).
 - `pattern (string)` - The pattern of a route of a page on which component is rendered. Handy for some comparison (see example usage).
 - `location (string)` - The location of page on which component is rendered (as pathname but also contains query strings).
+- `state (object[optional])` - Route state passed from history action. Is NOT the redux state. It is metadata only for the routing transition.
+  - Values passed to state are defined in route action.
+- `silent (boolean[optional]` - Defaults to `false` If this is set to `true`, redux will not react on the current routing action and not dispatch any further action. This should only be used to prevent side effects.
 
 #### Example usage
 ```jsx
@@ -109,7 +120,7 @@ import { CART_PATH } from '@shopgate/pwa-common-commerce/cart/constants';
 import { withPageState } from '@shopgate-ps/pwa-extension-kit/connectors';
 import LoadingIndicator from '...';
 
-const MyComponent = ({ isVisible, isLoading, pattern }) => {
+const MyComponent = ({ isVisible, isLoading, pattern, state }) => {
   // Returns null when component is rendered in the cart page.
   // Usually this approach is only needed in general-use portals like `app-bar.*`.
   if (pattern === CART_PATH) {
@@ -117,6 +128,9 @@ const MyComponent = ({ isVisible, isLoading, pattern }) => {
   }
   if (!isVisible) {
     return null;
+  }
+  if (state.title !== 'example title') {
+    return null
   }
   
   if (isLoading) {
@@ -169,7 +183,6 @@ Connects provided component with a product context
 - `productId (string)` - Id of the current shown product
 - `variantId (string)` -  Id of the current selected variant
 - `conditioner (Function)` - Helper class for ProductCharacteristic component
-- `state (object)` - Route state passed from history action
 
 
 #### Example usage

@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Fixed
 ### Removed
 
-## [0.6.1]
+## [0.7.0]
 ### Changed
 - `withHistoryActions` added params to historyPush and historyReplace
 - `withPageState` now receiving route state
@@ -68,7 +68,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [0.4.0]: https://github.com/shopgate-professional-services/pwa-extension-kit/compare/v0.3.0...v0.4.0
 [0.4.1]: https://github.com/shopgate-professional-services/pwa-extension-kit/compare/v0.4.0...v0.4.1
 [0.6.0]: https://github.com/shopgate-professional-services/pwa-extension-kit/compare/v0.4.1...v0.6.0
-[0.6.1: https://github.com/shopgate-professional-services/pwa-extension-kit/compare/v0.6.0...v0.6.1
+[0.6.1: https://github.com/shopgate-professional-services/pwa-extension-kit/compare/v0.6.0...v0.7.0
 
 [Connectors as Higher Order Components]: https://github.com/shopgate-professional-services/pwa-extension-kit/blob/master/src/connectors/README.md
 [Tagged Logger]: (https://github.com/shopgate-professional-services/pwa-extension-kit/blob/master/src/helpers/README.md)
