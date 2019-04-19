@@ -49,7 +49,7 @@ describe('connectors/withHistoryActions', () => {
           return;
         }
         props[action](pathname, state, silent);
-        expect(mockedAction).toHaveBeenCalledWith(action, pathname, state, silent);
+        expect(mockedAction).toHaveBeenCalledWith(action, { pathname, state, silent });
       });
     });
   });
