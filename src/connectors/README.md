@@ -109,9 +109,10 @@ Connects provided component with a page state: `isLoading`, `isVisible`.
 - `pathname (string)` - The pathname of page on which component is rendered (as in `window.location.pathname`).
 - `pattern (string)` - The pattern of a route of a page on which component is rendered. Handy for some comparison (see example usage).
 - `location (string)` - The location of page on which component is rendered (as pathname but also contains query strings).
-- `state (object[optional])` - Route state passed from history action. Is NOT the redux state. It is metadata only for the routing transition.
-  - Values passed to state are defined in route action.
-- `silent (boolean[optional]` - Defaults to `false` If this is set to `true`, redux will not react on the current routing action and not dispatch any further action. This should only be used to prevent side effects.
+- `params (object[optional])` - Params used to pass route state and silent flage
+  - `state (object[optional])` - Route state passed from history action. Is NOT the redux state. It is metadata only for the routing transition.
+    - Values passed to state are defined in route action.
+  - `silent (boolean[optional]` - Defaults to `false` If this is set to `true`, redux will not react on the current routing action and not dispatch any further action. This should only be used to prevent side effects.
 
 #### Example usage
 ```jsx
@@ -120,7 +121,10 @@ import { CART_PATH } from '@shopgate/pwa-common-commerce/cart/constants';
 import { withPageState } from '@shopgate-ps/pwa-extension-kit/connectors';
 import LoadingIndicator from '...';
 
-const MyComponent = ({ isVisible, isLoading, pattern, state }) => {
+const MyComponent = ({ isVisible, isLoading, pattern, params }) => {
+  const {
+    state,
+  } = params;
   // Returns null when component is rendered in the cart page.
   // Usually this approach is only needed in general-use portals like `app-bar.*`.
   if (pattern === CART_PATH) {
@@ -129,7 +133,7 @@ const MyComponent = ({ isVisible, isLoading, pattern, state }) => {
   if (!isVisible) {
     return null;
   }
-  if (state.title !== 'example title') {
+  if (params.state.title !== 'example title') {
     return null
   }
   
