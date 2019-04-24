@@ -24,7 +24,7 @@ class WithPageState extends Component {
             pathname,
             pattern,
             location,
-            params,
+            state,
         }) => (
           <LoadingContext.Consumer>
             {({ isLoading }) => (
@@ -34,7 +34,7 @@ class WithPageState extends Component {
                 pathname={pathname}
                 pattern={pattern}
                 location={location}
-                params={params}
+                state={state}
                 {...otherProps}
               />
             )}
