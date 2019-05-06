@@ -15,6 +15,7 @@ jest.mock('react-redux', () => ({
 }));
 
 describe('connectors/withHistoryActions', () => {
+  // eslint-disable-next-line react/prop-types, require-jsdoc
   const TestedComponent = props => <div>Other prop: {props.foo}</div>;
   const ConnectedComponent = withHistoryActions(TestedComponent);
   let component;
@@ -40,14 +41,31 @@ describe('connectors/withHistoryActions', () => {
     actions.forEach((action) => {
       it(`should call ${action}`, () => {
         const pathname = 'PATHNAME';
-
         if (action === 'historyPop') {
           props[action]();
           expect(mockedAction).toHaveBeenCalledWith(action);
           return;
         }
         props[action](pathname);
-        expect(mockedAction).toHaveBeenCalledWith(action, { pathname });
+        expect(mockedAction).toHaveBeenCalledWith(action, {
+          pathname,
+        });
+      });
+      it(`should call ${action} with options`, () => {
+        const pathname = 'PATHNAME';
+        const options = {
+          state: {},
+        };
+        if (action === 'historyPop') {
+          props[action]();
+          expect(mockedAction).toHaveBeenCalledWith(action);
+          return;
+        }
+        props[action](pathname, options);
+        expect(mockedAction).toHaveBeenCalledWith(action, {
+          pathname,
+          ...options,
+        });
       });
     });
   });

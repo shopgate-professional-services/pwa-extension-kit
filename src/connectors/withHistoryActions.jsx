@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { historyPush, historyReplace, historyPop } from '@shopgate/pwa-common/actions/router';
 
-// eslint-ignore-next-line require-jsdoc
+/**
+ * Exports Wrapped component
+ */
 class WithHistoryActions extends Component {
   static propTypes = {
     historyPop: PropTypes.func.isRequired,
@@ -17,12 +19,28 @@ class WithHistoryActions extends Component {
     otherProps: {},
   };
 
-  handlePush = (pathname) => {
-    this.props.historyPush({ pathname });
+  /**
+   * Handles historyPush
+   * @param {string} pathname pathname
+   * @param {Object} options passed options
+   */
+  handlePush = (pathname, options) => {
+    this.props.historyPush({
+      pathname,
+      ...options,
+    });
   };
 
-  handleReplace = (pathname) => {
-    this.props.historyReplace({ pathname });
+  /**
+   * Handles historyReplace
+   * @param {string} pathname pathname
+   * @param {Object} options passed options
+   */
+  handleReplace = (pathname, options) => {
+    this.props.historyReplace({
+      pathname,
+      ...options,
+    });
   };
 
   handlePop = () => {

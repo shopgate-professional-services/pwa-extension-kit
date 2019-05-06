@@ -13,8 +13,12 @@ Connects provided component with a wrapper behind internal PWA routing actions.
 Everywhere as a React component rendered within the PWA app.
 
 #### Props provided
-- `historyPush(pathname: string)` - Opens new page in a safe way. Detects link types. Internal links (deep links) which are handled by the PWA app. External links are handled by opening the in-app-browser.
-- `historyReplace(pathname:string)` - Replaces current page with provided pathname if pathname is an internal link. If pathname is external link it works exactly as `historyPush`. If you intend to replace your current page with in-app-browser, use combination of `historyPush` and `historyPop` instead.
+- `historyPush(pathname: string, options: object[optional])` - Opens new page in a safe way. Detects link types. Internal links (deep links) which are handled by the PWA app. External links are handled by opening the in-app-browser.
+    - `state (object[optional])` - Route state is a property of options and passed from history action. Is NOT the redux state. It is metadata only for the routing transition.
+    - Values passed to state are defined in route action.
+- `historyReplace(pathname: string, options: object[optional])` - Replaces current page with provided pathname if pathname is an internal link. If pathname is external link it works exactly as `historyPush`. If you intend to replace your current page with in-app-browser, use combination of `historyPush` and `historyPop` instead.
+    - `state (object[optional])` - Route state is a property of options and  passed from history action. Is NOT the redux state. It is metadata only for the routing transition.
+    - Values passed to state are defined in route action.
 - `historyPop()` - Pops current page from a history stack. Works like a "back" button.
 
 #### Example usage
@@ -22,9 +26,9 @@ Everywhere as a React component rendered within the PWA app.
 import React, { Component } from 'react'
 import { withHistoryActions } from '@shopgate-ps/pwa-extension-kit/connectors';
 
-class MyComponent extends Component {
+class MyComponent extends Component 
   handleClick = () => {
-    this.props.historyPush('https://example.com');
+    this.props.historyPush('/example', { state: { title: 'foo' });
   }
   handleDismiss = () => {
     this.props.historyPop();
@@ -97,6 +101,8 @@ Connects provided component with a page state: `isLoading`, `isVisible`.
 - `pathname (string)` - The pathname of page on which component is rendered (as in `window.location.pathname`).
 - `pattern (string)` - The pattern of a route of a page on which component is rendered. Handy for some comparison (see example usage).
 - `location (string)` - The location of page on which component is rendered (as pathname but also contains query strings).
+- `state (object[optional])` - Route state passed from history action. Is NOT the redux state. It is metadata only for the routing transition.
+  - Values passed to state are defined in route action.
 
 #### Example usage
 ```jsx
@@ -105,7 +111,7 @@ import { CART_PATH } from '@shopgate/pwa-common-commerce/cart/constants';
 import { withPageState } from '@shopgate-ps/pwa-extension-kit/connectors';
 import LoadingIndicator from '...';
 
-const MyComponent = ({ isVisible, isLoading, pattern }) => {
+const MyComponent = ({ isVisible, isLoading, pattern, state }) => {
   // Returns null when component is rendered in the cart page.
   // Usually this approach is only needed in general-use portals like `app-bar.*`.
   if (pattern === CART_PATH) {
@@ -114,12 +120,10 @@ const MyComponent = ({ isVisible, isLoading, pattern }) => {
   if (!isVisible) {
     return null;
   }
-  
   if (isLoading) {
     return <LoadingIndicator />
   }
-  
-  return <div>Hello world!</div>;
+  return <div>{state.title || 'Default title'}</div>;
 }
 
 export default withPageState(MyComponent);

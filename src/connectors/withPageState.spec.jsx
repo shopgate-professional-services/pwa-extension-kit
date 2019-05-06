@@ -33,6 +33,7 @@ jest.mock('@shopgate/pwa-common/context', () => ({
           pattern="/foo/:id"
           location="/foo/bar?foo=bar"
           visible
+          state={{ title: 'foo' }}
           {...otherProps}
         />
       );
@@ -52,6 +53,7 @@ describe('connectors/withPageState', () => {
       location: '/foo/bar?foo=bar',
       pattern: '/foo/:id',
       pathname: '/foo/bar',
+      state: { title: 'foo' },
     });
   });
 });
