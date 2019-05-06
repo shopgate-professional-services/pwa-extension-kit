@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -15,9 +15,9 @@ var _data = require("@shopgate/pwa-common/helpers/data");
 
 var _helpers = require("../helpers");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -91,9 +91,9 @@ function (_Component) {
           WrappedComponent = _this$props.WrappedComponent,
           otherProps = _objectWithoutProperties(_this$props, ["WrappedComponent"]);
 
-      return _react.default.createElement(_context.RouteContext.Consumer, null, function (_ref) {
+      return _react["default"].createElement(_context.RouteContext.Consumer, null, function (_ref) {
         var params = _ref.params;
-        return _react.default.createElement(WrappedComponent, _extends({
+        return _react["default"].createElement(WrappedComponent, _extends({
           productId: decodeProductIdFromParams(params)
         }, otherProps));
       });
@@ -104,18 +104,18 @@ function (_Component) {
 }(_react.Component);
 /**
  * Returns a Wrapped Component with automatic props.productId read from RouteContext.
- * @param {function} WrappedComponent Component which will be wrapped with data connector.
- * @returns {function} React component.
+ * @param {Function} WrappedComponent Component which will be wrapped with data connector.
+ * @returns {Function} React component.
  */
 
 
 var withPageProductId = function withPageProductId(WrappedComponent) {
   return function (props) {
-    return _react.default.createElement(WithPageProductId, _extends({
+    return _react["default"].createElement(WithPageProductId, _extends({
       WrappedComponent: WrappedComponent
     }, props));
   };
 };
 
 var _default = withPageProductId;
-exports.default = _default;
+exports["default"] = _default;

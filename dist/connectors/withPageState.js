@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -13,9 +13,9 @@ var _providers = require("@shopgate/pwa-common/providers/");
 
 var _context = require("@shopgate/pwa-common/context");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -67,19 +67,21 @@ function (_Component) {
           WrappedComponent = _this$props.WrappedComponent,
           otherProps = _objectWithoutProperties(_this$props, ["WrappedComponent"]);
 
-      return _react.default.createElement(_context.RouteContext.Consumer, null, function (_ref) {
+      return _react["default"].createElement(_context.RouteContext.Consumer, null, function (_ref) {
         var visible = _ref.visible,
             pathname = _ref.pathname,
             pattern = _ref.pattern,
-            location = _ref.location;
-        return _react.default.createElement(_providers.LoadingContext.Consumer, null, function (_ref2) {
+            location = _ref.location,
+            state = _ref.state;
+        return _react["default"].createElement(_providers.LoadingContext.Consumer, null, function (_ref2) {
           var isLoading = _ref2.isLoading;
-          return _react.default.createElement(WrappedComponent, _extends({
+          return _react["default"].createElement(WrappedComponent, _extends({
             isLoading: isLoading(pathname),
             isVisible: visible,
             pathname: pathname,
             pattern: pattern,
-            location: location
+            location: location,
+            state: state
           }, otherProps));
         });
       });
@@ -91,10 +93,10 @@ function (_Component) {
 
 var _default = function _default(WrappedComponent) {
   return function (props) {
-    return _react.default.createElement(WithPageState, _extends({
+    return _react["default"].createElement(WithPageState, _extends({
       WrappedComponent: WrappedComponent
     }, props));
   };
 };
 
-exports.default = _default;
+exports["default"] = _default;

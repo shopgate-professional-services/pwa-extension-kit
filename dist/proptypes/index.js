@@ -6,16 +6,16 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "User", {
   enumerable: true,
   get: function get() {
-    return _User.default;
+    return _User["default"];
   }
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _User = _interopRequireDefault(require("./User"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _default = {
-  User: _User.default
+  User: _User["default"]
 };
-exports.default = _default;
+exports["default"] = _default;

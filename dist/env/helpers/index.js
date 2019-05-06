@@ -6,16 +6,16 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "isIOSTheme", {
   enumerable: true,
   get: function get() {
-    return _isIOSTheme.default;
+    return _isIOSTheme["default"];
   }
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _isIOSTheme = _interopRequireDefault(require("./isIOSTheme"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _default = {
-  isIOSTheme: _isIOSTheme.default
+  isIOSTheme: _isIOSTheme["default"]
 };
-exports.default = _default;
+exports["default"] = _default;

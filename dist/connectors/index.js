@@ -6,40 +6,40 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "withPageProductId", {
   enumerable: true,
   get: function get() {
-    return _withPageProductId.default;
+    return _withPageProductId["default"];
   }
 });
 Object.defineProperty(exports, "withPageState", {
   enumerable: true,
   get: function get() {
-    return _withPageState.default;
+    return _withPageState["default"];
   }
 });
 Object.defineProperty(exports, "withHistoryActions", {
   enumerable: true,
   get: function get() {
-    return _withHistoryActions.default;
+    return _withHistoryActions["default"];
   }
 });
 Object.defineProperty(exports, "withUser", {
   enumerable: true,
   get: function get() {
-    return _withUser.default;
+    return _withUser["default"];
   }
 });
 Object.defineProperty(exports, "withThemeComponents", {
   enumerable: true,
   get: function get() {
-    return _withThemeComponents.default;
+    return _withThemeComponents["default"];
   }
 });
 Object.defineProperty(exports, "withProductContext", {
   enumerable: true,
   get: function get() {
-    return _withProductContext.default;
+    return _withProductContext["default"];
   }
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _withPageProductId = _interopRequireDefault(require("./withPageProductId"));
 
@@ -53,14 +53,14 @@ var _withThemeComponents = _interopRequireDefault(require("./withThemeComponents
 
 var _withProductContext = _interopRequireDefault(require("./withProductContext"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _default = {
-  withHistoryActions: _withHistoryActions.default,
-  withPageProductId: _withPageProductId.default,
-  withPageState: _withPageState.default,
-  withUser: _withUser.default,
-  withThemeComponents: _withThemeComponents.default,
-  withProductContext: _withProductContext.default
+  withHistoryActions: _withHistoryActions["default"],
+  withPageProductId: _withPageProductId["default"],
+  withPageState: _withPageState["default"],
+  withUser: _withUser["default"],
+  withThemeComponents: _withThemeComponents["default"],
+  withProductContext: _withProductContext["default"]
 };
-exports.default = _default;
+exports["default"] = _default;

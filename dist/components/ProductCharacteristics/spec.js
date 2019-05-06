@@ -8,7 +8,7 @@ var _Conditioner = _interopRequireDefault(require("@shopgate/pwa-core/classes/Co
 
 var _index = _interopRequireDefault(require("./index"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -22,7 +22,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var mockedConditioner = new _Conditioner.default();
+var mockedConditioner = new _Conditioner["default"]();
 var mockedMapStateToPropsResult = {
   variants: {
     products: [{
@@ -66,7 +66,7 @@ jest.mock('react-redux', function () {
     connect: function connect(mapStateToProps) {
       return function (Component) {
         return function (props) {
-          return _react.default.createElement(Component, _extends({
+          return _react["default"].createElement(Component, _extends({
             variants: mockedMapStateToPropsResult.variants
           }, props));
         };
@@ -100,7 +100,7 @@ jest.mock('@shopgate/pwa-common/context', function () {
               var ContextChildren = _ref2.children,
                   contextProps = _objectWithoutProperties(_ref2, ["children"]);
 
-              return _react.default.createElement(ContextChildren, _extends({
+              return _react["default"].createElement(ContextChildren, _extends({
                 options: {},
                 productId: "123",
                 variantId: "123-45",
@@ -111,20 +111,20 @@ jest.mock('@shopgate/pwa-common/context', function () {
         }
       }, otherProps);
 
-      return _react.default.createElement(Child, props);
+      return _react["default"].createElement(Child, props);
     }
   };
 });
 describe('components/ProductCharacteristics', function () {
   it('should render', function () {
-    var component = (0, _enzyme.mount)(_react.default.createElement(_index.default, {
+    var component = (0, _enzyme.mount)(_react["default"].createElement(_index["default"], {
       render: jest.fn()
     }));
     expect(component).toMatchSnapshot();
   });
   it('should call render prop', function () {
     var renderer = jest.fn();
-    (0, _enzyme.mount)(_react.default.createElement(_index.default, {
+    (0, _enzyme.mount)(_react["default"].createElement(_index["default"], {
       render: renderer
     }));
     var expected1 = {
