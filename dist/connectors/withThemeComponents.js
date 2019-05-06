@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -11,9 +11,9 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _context = require("@shopgate/pwa-common/context");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -65,11 +65,11 @@ function (_Component) {
           WrappedComponent = _this$props.WrappedComponent,
           otherProps = _objectWithoutProperties(_this$props, ["WrappedComponent"]);
 
-      return _react.default.createElement(_context.Theme, null, function (props) {
+      return _react["default"].createElement(_context.Theme, null, function (props) {
         var contexts = props.contexts,
             components = _objectWithoutProperties(props, ["contexts"]);
 
-        return _react.default.createElement(WrappedComponent, _extends({}, components, otherProps));
+        return _react["default"].createElement(WrappedComponent, _extends({}, components, otherProps));
       });
     }
   }]);
@@ -79,10 +79,10 @@ function (_Component) {
 
 var _default = function _default(WrappedComponent) {
   return function (props) {
-    return _react.default.createElement(WithThemeComponents, _extends({
+    return _react["default"].createElement(WithThemeComponents, _extends({
       WrappedComponent: WrappedComponent
     }, props));
   };
 };
 
-exports.default = _default;
+exports["default"] = _default;

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -13,13 +13,15 @@ var _reactRedux = require("react-redux");
 
 var _router = require("@shopgate/pwa-common/actions/router");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -31,15 +33,17 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-// eslint-ignore-next-line require-jsdoc
+/**
+ * Exports Wrapped component
+ */
 var WithHistoryActions =
 /*#__PURE__*/
 function (_Component) {
@@ -58,19 +62,19 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(WithHistoryActions)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handlePush", function (pathname) {
-      _this.props.historyPush({
+    _defineProperty(_assertThisInitialized(_this), "handlePush", function (pathname, options) {
+      _this.props.historyPush(_objectSpread({
         pathname: pathname
-      });
+      }, options));
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleReplace", function (pathname) {
-      _this.props.historyReplace({
+    _defineProperty(_assertThisInitialized(_this), "handleReplace", function (pathname, options) {
+      _this.props.historyReplace(_objectSpread({
         pathname: pathname
-      });
+      }, options));
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handlePop", function () {
+    _defineProperty(_assertThisInitialized(_this), "handlePop", function () {
       _this.props.historyPop();
     });
 
@@ -87,7 +91,7 @@ function (_Component) {
       var _this$props = this.props,
           WrappedComponent = _this$props.WrappedComponent,
           otherProps = _this$props.otherProps;
-      return _react.default.createElement(WrappedComponent, _extends({
+      return _react["default"].createElement(WrappedComponent, _extends({
         historyPop: this.handlePop,
         historyPush: this.handlePush,
         historyReplace: this.handleReplace
@@ -111,11 +115,11 @@ var Connected = (0, _reactRedux.connect)(null, mapDispatchToProps)(WithHistoryAc
 
 var _default = function _default(WrappedComponent) {
   return function (props) {
-    return _react.default.createElement(Connected, {
+    return _react["default"].createElement(Connected, {
       WrappedComponent: WrappedComponent,
       otherProps: props
     });
   };
 };
 
-exports.default = _default;
+exports["default"] = _default;

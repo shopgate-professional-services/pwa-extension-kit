@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -17,7 +17,7 @@ var _user2 = require("./selectors/user");
 
 var _proptypes = require("../proptypes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -36,7 +36,7 @@ var WithUser = function WithUser(_ref) {
       user = _ref.user,
       otherProps = _objectWithoutProperties(_ref, ["WrappedComponent", "user"]);
 
-  return _react.default.createElement(WrappedComponent, _extends({
+  return _react["default"].createElement(WrappedComponent, _extends({
     user: user
   }, otherProps));
 };
@@ -68,11 +68,11 @@ var ConnectedWithUser = (0, _reactRedux.connect)(mapStateToProps)(WithUser);
 
 var withUser = function withUser(WrappedComponent) {
   return function (props) {
-    return _react.default.createElement(ConnectedWithUser, _extends({
+    return _react["default"].createElement(ConnectedWithUser, _extends({
       WrappedComponent: WrappedComponent
     }, props));
   };
 };
 
 var _default = withUser;
-exports.default = _default;
+exports["default"] = _default;
