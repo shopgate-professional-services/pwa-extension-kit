@@ -41,6 +41,18 @@ describe('connectors/withHistoryActions', () => {
     actions.forEach((action) => {
       it(`should call ${action}`, () => {
         const pathname = 'PATHNAME';
+        if (action === 'historyPop') {
+          props[action]();
+          expect(mockedAction).toHaveBeenCalledWith(action);
+          return;
+        }
+        props[action](pathname);
+        expect(mockedAction).toHaveBeenCalledWith(action, {
+          pathname,
+        });
+      });
+      it(`should call ${action} with options`, () => {
+        const pathname = 'PATHNAME';
         const options = {
           state: {},
         };
